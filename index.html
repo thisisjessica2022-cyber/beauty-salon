@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>玫瑰美容美发 · 专业美丽体验</title>
+  <meta name="description" content="玫瑰美容美发沙龙 — 专业美发造型、护肤美容、美甲服务，打造您的专属美丽。立即预约，享受高端服务体验。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 顶部导航 -->
+  <header class="top-bar">
+    <div class="top-bar-inner">
+      <span class="logo-text">🌹 玫瑰美容美发</span>
+      <a href="tel:+16479991234" class="call-btn">📞 预约</a>
+    </div>
+  </header>
+
+  <!-- 标签栏 -->
+  <nav class="tab-nav" id="tabNav">
+    <a class="tab active" href="#detail" onclick="switchTab('detail',this)">详情</a>
+    <a class="tab" href="#services" onclick="switchTab('services',this)">服务</a>
+    <a class="tab" href="#notice" onclick="switchTab('notice',this)">须知</a>
+    <a class="tab" href="#reviews" onclick="switchTab('reviews',this)">评价</a>
+  </nav>
+
+  <!-- 主图轮播 -->
+  <div class="hero-slider" id="detail">
+    <div class="slides-wrapper" id="slidesWrapper">
+      <div class="slide">
+        <img src="img_salon.png" alt="沙龙环境" />
+        <div class="slide-overlay">
+          <h1>专业美丽体验</h1>
+          <p>为您打造独一无二的精致造型</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="img_hair.png" alt="美发服务" />
+        <div class="slide-overlay">
+          <h1>高端美发造型</h1>
+          <p>专业发型师为您量身定制</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="img_beauty.png" alt="美容护肤" />
+        <div class="slide-overlay">
+          <h1>奢华护肤美容</h1>
+          <p>专业护肤，焕发自然光彩</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="img_nail.png" alt="美甲服务" />
+        <div class="slide-overlay">
+          <h1>精致美甲艺术</h1>
+          <p>让指尖成为您的时尚名片</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-dots" id="slideDots">
+      <span class="dot active" onclick="goSlide(0)"></span>
+      <span class="dot" onclick="goSlide(1)"></span>
+      <span class="dot" onclick="goSlide(2)"></span>
+      <span class="dot" onclick="goSlide(3)"></span>
+    </div>
+  </nav>
+
+  <!-- 亮点标签 -->
+  <div class="highlight-tags">
+    <span class="tag">✨ 10年经验</span>
+    <span class="tag">🏆 口碑品牌</span>
+    <span class="tag">💎 高端产品</span>
+    <span class="tag">🌸 专业团队</span>
+  </div>
+
+  <!-- 简介 -->
+  <section class="intro-section">
+    <p class="intro-text">玫瑰美容美发沙龙，拥有超过10年专业服务经验，致力于为每一位客人提供<strong>专属、精致、舒适</strong>的美丽体验。我们汇聚顶级发型师与美容师，使用国际一线品牌产品，让您从头到脚焕然一新。</p>
+  </section>
+
+  <!-- 服务套餐区 -->
+  <section class="packages-section" id="services">
+    <h2 class="section-title">✦ 服务套餐 ✦</h2>
+
+    <div class="package-card featured">
+      <div class="package-badge">🔥 最受欢迎</div>
+      <div class="package-header">
+        <div>
+          <div class="package-name">豪华美发全套</div>
+          <div class="package-desc">洗发 · 剪发 · 造型 · 护发</div>
+        </div>
+        <div class="package-price-block">
+          <span class="price-original">$120</span>
+          <span class="price-now">$88</span>
+        </div>
+      </div>
+      <div class="package-features">
+        <span>✅ 深层清洁洗发</span>
+        <span>✅ 专业剪发造型</span>
+        <span>✅ 奢华护发膜</span>
+        <span>✅ 吹干定型</span>
+      </div>
+      <div class="qty-row">
+        <span class="qty-label">数量</span>
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="changeQty('q1',-1)">−</button>
+          <span class="qty-val" id="q1">1</span>
+          <button class="qty-btn" onclick="changeQty('q1',1)">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="package-card">
+      <div class="package-header">
+        <div>
+          <div class="package-name">基础美发套餐</div>
+          <div class="package-desc">洗发 · 剪发 · 吹干</div>
+        </div>
+        <div class="package-price-block">
+          <span class="price-original">$65</span>
+          <span class="price-now">$45</span>
+        </div>
+      </div>
+      <div class="package-features">
+        <span>✅ 专业洗发</span>
+        <span>✅ 精准剪发</span>
+        <span>✅ 吹干造型</span>
+      </div>
+      <div class="qty-row">
+        <span class="qty-label">数量</span>
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="changeQty('q2',-1)">−</button>
+          <span class="qty-val" id="q2">1</span>
+          <button class="qty-btn" onclick="changeQty('q2',1)">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="package-card">
+      <div class="package-badge new">🆕 新品</div>
+      <div class="package-header">
+        <div>
+          <div class="package-name">美容护肤套餐</div>
+          <div class="package-desc">深层清洁 · 补水 · 提亮肤色</div>
+        </div>
+        <div class="package-price-block">
+          <span class="price-original">$150</span>
+          <span class="price-now">$99</span>
+        </div>
+      </div>
+      <div class="package-features">
+        <span>✅ 深层洁肤</span>
+        <span>✅ 精华导入</span>
+        <span>✅ 补水面膜</span>
+        <span>✅ 头肩按摩</span>
+      </div>
+      <div class="qty-row">
+        <span class="qty-label">数量</span>
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="changeQty('q3',-1)">−</button>
+          <span class="qty-val" id="q3">1</span>
+          <button class="qty-btn" onclick="changeQty('q3',1)">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="package-card">
+      <div class="package-header">
+        <div>
+          <div class="package-name">精致美甲套餐</div>
+          <div class="package-desc">修甲 · 美甲 · 甲油胶</div>
+        </div>
+        <div class="package-price-block">
+          <span class="price-original">$80</span>
+          <span class="price-now">$55</span>
+        </div>
+      </div>
+      <div class="package-features">
+        <span>✅ 专业修甲</span>
+        <span>✅ 美甲设计</span>
+        <span>✅ 持久甲油胶</span>
+      </div>
+      <div class="qty-row">
+        <span class="qty-label">数量</span>
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="changeQty('q4',-1)">−</button>
+          <span class="qty-val" id="q4">1</span>
+          <button class="qty-btn" onclick="changeQty('q4',1)">+</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 详情介绍 -->
+  <section class="detail-section">
+    <h2 class="section-title">✦ 沙龙介绍 ✦</h2>
+    <div class="detail-content">
+      <p>玫瑰美容美发沙龙成立于2014年，坐落于温哥华核心商业区，环境优雅，设施一流。我们的团队由来自国内外的顶级美发师和美容师组成，均拥有10年以上从业经验，持有国际专业认证。</p>
+      <div class="info-grid">
+        <div class="info-item">
+          <span class="info-icon">🕐</span>
+          <div>
+            <div class="info-label">营业时间</div>
+            <div class="info-val">周一至周五 10:00–20:00<br/>周六至周日 09:00–21:00</div>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">📍</span>
+          <div>
+            <div class="info-label">地址</div>
+            <div class="info-val">123 Beauty Ave, Vancouver, BC V6B 1A1</div>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">📞</span>
+          <div>
+            <div class="info-label">电话预约</div>
+            <div class="info-val">+1 (647) 999-1234</div>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">🅿️</span>
+          <div>
+            <div class="info-label">停车</div>
+            <div class="info-val">门前免费停车，2小时</div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="sub-title">✨ 我们的亮点</h3>
+      <ul class="highlight-list">
+        <li>🌟 专业资质认证美发师与美容师</li>
+        <li>💄 使用欧莱雅、卡诗、La Mer等国际一线产品</li>
+        <li>🛋️ 高端舒适的沙龙环境，VIP包间可预约</li>
+        <li>💆 全套头皮检测与护理方案定制</li>
+        <li>🎁 首次到店享9折优惠，老客户推荐享8折</li>
+        <li>📱 支持微信、Line在线预约，省时省力</li>
+      </ul>
+
+      <h3 class="sub-title">💅 服务项目一览</h3>
+      <div class="service-tags">
+        <span>剪发造型</span><span>烫发</span><span>染发</span>
+        <span>护发焗油</span><span>头皮护理</span><span>接发</span>
+        <span>补水护肤</span><span>美白淡斑</span><span>面部清洁</span>
+        <span>美甲</span><span>美睫</span><span>眉毛设计</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 须知 -->
+  <section class="notice-section" id="notice">
+    <h2 class="section-title">✦ 预约须知 ✦</h2>
+    <div class="notice-list">
+      <div class="notice-item">
+        <span class="notice-num">01</span>
+        <div>
+          <strong>提前预约</strong>
+          <p>建议提前1-3天预约，节假日热门时段请至少提前一周预约。</p>
+        </div>
+      </div>
+      <div class="notice-item">
+        <span class="notice-num">02</span>
+        <div>
+          <strong>准时到店</strong>
+          <p>请在预约时间前5分钟到达，如有延误请提前电话告知，超过15分钟将取消预约。</p>
+        </div>
+      </div>
+      <div class="notice-item">
+        <span class="notice-num">03</span>
+        <div>
+          <strong>取消政策</strong>
+          <p>预约24小时前可免费取消；24小时内取消将收取20%手续费。</p>
+        </div>
+      </div>
+      <div class="notice-item">
+        <span class="notice-num">04</span>
+        <div>
+          <strong>健康安全</strong>
+          <p>如有头皮过敏或皮肤敏感史，请提前告知技师，我们将为您定制安全方案。</p>
+        </div>
+      </div>
+      <div class="notice-item">
+        <span class="notice-num">05</span>
+        <div>
+          <strong>支付方式</strong>
+          <p>接受现金、信用卡、微信支付、支付宝，欢迎各种支付方式。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 评价 -->
+  <section class="reviews-section" id="reviews">
+    <h2 class="section-title">✦ 客户评价 ✦</h2>
+    <div class="rating-summary">
+      <div class="big-score">4.9</div>
+      <div class="rating-right">
+        <div class="stars">★★★★★</div>
+        <div class="rating-count">共 238 条评价</div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-header">
+        <div class="reviewer-avatar">L</div>
+        <div>
+          <div class="reviewer-name">Linda W.</div>
+          <div class="review-stars">★★★★★</div>
+        </div>
+        <div class="review-date">2026-05-20</div>
+      </div>
+      <p class="review-text">技师非常专业，发型做出来超出我的期望！环境也很好，音乐轻柔，整个过程非常放松。强烈推荐豪华美发全套，护发膜做完头发超级柔顺✨</p>
+      <div class="review-tags"><span>专业</span><span>环境好</span><span>收获很大</span></div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-header">
+        <div class="reviewer-avatar" style="background:#c084fc">M</div>
+        <div>
+          <div class="reviewer-name">Michelle Z.</div>
+          <div class="review-stars">★★★★★</div>
+        </div>
+        <div class="review-date">2026-04-15</div>
+      </div>
+      <p class="review-text">护肤套餐做完皮肤光滑了很多，美容师会先分析皮肤状况再定制方案，感觉很贴心。店里还有免费饮品，等待也不无聊👍</p>
+      <div class="review-tags"><span>服务贴心</span><span>效果明显</span><span>非常满意</span></div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-header">
+        <div class="reviewer-avatar" style="background:#34d399">S</div>
+        <div>
+          <div class="reviewer-name">Sophie C.</div>
+          <div class="review-stars">★★★★★</div>
+        </div>
+        <div class="review-date">2026-03-08</div>
+      </div>
+      <p class="review-text">美甲师技术一流，我带了参考图，还原度将近100%！持久度也很好，做完3周还没有脱落。已经成为我的固定沙龙，会一直来💅</p>
+      <div class="review-tags"><span>技术精湛</span><span>持久耐用</span><span>风格很好</span></div>
+    </div>
+  </section>
+
+  <!-- 相关推荐 -->
+  <section class="related-section">
+    <h2 class="section-title">✦ 热门推荐 ✦</h2>
+    <div class="related-scroll">
+      <div class="related-card">
+        <img src="img_hair.png" alt="烫染套餐" />
+        <div class="related-info">
+          <div class="related-name">时尚烫染套餐</div>
+          <div class="related-price"><span class="rprice-now">$138</span> <span class="rprice-orig">$200</span></div>
+        </div>
+      </div>
+      <div class="related-card">
+        <img src="img_beauty.png" alt="VIP护肤" />
+        <div class="related-info">
+          <div class="related-name">VIP奢华护肤</div>
+          <div class="related-price"><span class="rprice-now">$168</span> <span class="rprice-orig">$260</span></div>
+        </div>
+      </div>
+      <div class="related-card">
+        <img src="img_nail.png" alt="全套美甲" />
+        <div class="related-info">
+          <div class="related-name">全套美甲艺术</div>
+          <div class="related-price"><span class="rprice-now">$88</span> <span class="rprice-orig">$120</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 分享获优惠 -->
+  <section class="share-section">
+    <div class="share-box">
+      <div class="share-title">🎉 分享好友，解锁专属优惠！</div>
+      <div class="share-desc">邀请5位好友浏览本页面，即可享受<strong>85折</strong>专属会员价</div>
+      <div class="share-steps">
+        <div class="share-step"><span>1</span>点击下方分享按钮</div>
+        <div class="share-step"><span>2</span>发送给好友或朋友圈</div>
+        <div class="share-step"><span>3</span>5位好友点击后自动解锁</div>
+      </div>
+      <button class="share-btn" onclick="alert('分享链接已复制！感谢您的推荐🌹')">📤 立即分享</button>
+    </div>
+  </section>
+
+  <!-- 底部导航 -->
+  <nav class="bottom-nav">
+    <a class="bnav-item active" href="#detail">
+      <span class="bnav-icon">🏠</span>
+      <span>首页</span>
+    </a>
+    <a class="bnav-item" href="#services">
+      <span class="bnav-icon">💇</span>
+      <span>服务</span>
+    </a>
+    <a class="bnav-item" href="#reviews">
+      <span class="bnav-icon">⭐</span>
+      <span>评价</span>
+    </a>
+    <a class="bnav-item" href="tel:+16479991234">
+      <span class="bnav-icon">📞</span>
+      <span>电话</span>
+    </a>
+    <a class="bnav-item" href="https://wa.me/16479991234">
+      <span class="bnav-icon">💬</span>
+      <span>微信</span>
+    </a>
+  </nav>
+
+  <!-- 底部固定预约栏 -->
+  <div class="sticky-book">
+    <div class="sticky-price">起价 <strong>$45</strong></div>
+    <button class="book-btn" onclick="document.getElementById('bookModal').style.display='flex'">立即预约</button>
+  </div>
+
+  <!-- 预约弹窗 -->
+  <div class="modal-overlay" id="bookModal" onclick="if(event.target===this)this.style.display='none'">
+    <div class="modal-box">
+      <button class="modal-close" onclick="document.getElementById('bookModal').style.display='none'">✕</button>
+      <h3 class="modal-title">🌹 在线预约</h3>
+      <form onsubmit="submitBooking(event)">
+        <div class="form-group">
+          <label>您的姓名</label>
+          <input type="text" id="bookName" placeholder="请输入姓名" required />
+        </div>
+        <div class="form-group">
+          <label>联系电话</label>
+          <input type="tel" id="bookPhone" placeholder="请输入电话号码" required />
+        </div>
+        <div class="form-group">
+          <label>选择服务</label>
+          <select id="bookService">
+            <option>豪华美发全套 — $88</option>
+            <option>基础美发套餐 — $45</option>
+            <option>美容护肤套餐 — $99</option>
+            <option>精致美甲套餐 — $55</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>预约日期</label>
+          <input type="date" id="bookDate" required />
+        </div>
+        <div class="form-group">
+          <label>偏好时间</label>
+          <select id="bookTime">
+            <option>10:00</option><option>11:00</option><option>12:00</option>
+            <option>13:00</option><option>14:00</option><option>15:00</option>
+            <option>16:00</option><option>17:00</option><option>18:00</option><option>19:00</option>
+          </select>
+        </div>
+        <button type="submit" class="form-submit">✅ 确认预约</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 成功提示 -->
+  <div class="toast" id="toast">🎉 预约成功！我们将在24小时内确认您的预约</div>
+
+  <script src="app.js"></script>
+</body>
+</html>
